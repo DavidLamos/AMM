@@ -14,7 +14,7 @@ const Home = () => {
   const CONST_K = 1000000
 
   const buyYesToken = () => {
-    const newYesAmount = totalYesToken + yesBuyTokenAmount * priceYesToekn
+    const newYesAmount = totalYesToken - yesBuyTokenAmount * priceYesToekn
     const newNoAmount = CONST_K / newYesAmount
     setTotalYesToken(newYesAmount)
     setTotalNoToken(newNoAmount)
@@ -23,7 +23,7 @@ const Home = () => {
   }
 
   const sellYesToken = () => {
-    const newYesAmount = totalYesToken + yesBuyTokenAmount - priceYesToekn
+    const newYesAmount = totalYesToken + yesBuyTokenAmount * priceYesToekn
     const newNoAmount = CONST_K / newYesAmount
     setTotalYesToken(newYesAmount)
     setTotalNoToken(newNoAmount)
@@ -32,7 +32,7 @@ const Home = () => {
   }
 
   const buyNoToken = () => {
-    const newNoAmount = totalNoToken + noBuyTokenAmount * priceNoToekn
+    const newNoAmount = totalNoToken - noBuyTokenAmount * priceNoToekn
     const newYesAmount = CONST_K / newNoAmount
     setTotalYesToken(newYesAmount)
     setTotalNoToken(newNoAmount)
@@ -41,7 +41,7 @@ const Home = () => {
   }
 
   const sellNoToken = () => {
-    const newNoAmount = totalNoToken - noBuyTokenAmount * priceNoToekn
+    const newNoAmount = totalNoToken + noBuyTokenAmount * priceNoToekn
     const newYesAmount = CONST_K / newNoAmount
     setTotalYesToken(newYesAmount)
     setTotalNoToken(newNoAmount)
